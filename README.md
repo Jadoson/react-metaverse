@@ -1,50 +1,67 @@
-# React + TypeScript + Vite
+# React Metaverse Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Этот проект представляет собой фронтенд-приложение для регистрации пользователей и подключения криптокошелька Metamask. Приложение создано на React с TypeScript и Vite и поддерживает взаимодействие с блокчейном с использованием библиотеки Ethers.js. 
 
-Currently, two official plugins are available:
+## Описание
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Технологии**: React, TypeScript, Vite, Tailwind CSS, Ethers.js, React Router.
+- **Функционал**: Подключение криптокошелька, регистрация пользователей, динамическое отображение таблицы зарегистрированных пользователей, переход на страницу участника с деталями.
+- **Особенности интерфейса**: Основная страница с фоновым изображением, регистрацией, таблицей участников и статистикой "Roadmap Stats".
 
-## Expanding the ESLint configuration
+##  Начало работы
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Установка зависимостей
 
-- Configure the top-level `parserOptions` property like this:
+Клонируйте репозиторий и установите зависимости:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+```bash
+git clone https://github.com/Jadoson/react-metaverse.git
+cd react-metaverse
+npm install
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Запуск проекта
+Для запуска проекта в режиме разработки используйте команду:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+ ```bash
+npm run dev
+Приложение будет доступно по адресу: http://localhost:5173
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Основные зависимости
+React и React Router — для построения и маршрутизации интерфейса.
+TypeScript — для статической типизации.
+Vite — для быстрой сборки и запуска проекта.
+Ethers.js — для работы с блокчейном и подключения MetaMask.
+Tailwind CSS — для стилизации интерфейса.
+
+## Структура проекта
+
+```plaintext
+src
+├── api                 # Функции API для взаимодействия с сервером
+├── components          # Компоненты React
+│   ├── ConnectWallet   # Компонент для подключения кошелька
+│   ├── RegistrationForm# Компонент формы регистрации
+│   ├── UserList        # Компонент таблицы пользователей
+│   └── UserDetails     # Компонент с деталями пользователя
+├── types               # Типы данных TypeScript
+├── App.tsx             # Основной компонент приложения
+└── App.css             # Основной файл стилей
+
+## Функциональность
+Подключение Metamask: Кнопка для подключения криптокошелька с использованием MetaMask и Ethers.js.
+Форма регистрации: Регистрация нового пользователя (имя, email, адрес кошелька).
+Таблица пользователей: Список зарегистрированных пользователей с сортировкой по дате добавления. Новые пользователи выделяются оранжевым цветом.
+Удаление пользователей: Возможность удаления пользователей из таблицы.
+Страница участника: Отдельная страница с деталями выбранного пользователя.
+Roadmap Stats: Текстовый блок справа от фонового изображения с разделенными полосами.
+## API
+Бэкенд: https://new-backend.unistory.app
+Эндпоинты:
+/api/data — для получения всех пользователей.
+/api/data/id/:id — для получения данных пользователя по ID.
+## Заметки
+Добавление пользователя: Пользователь добавляется в таблицу только локально (без отправки на сервер), после нажатия на кнопку "Add to Table" в форме регистрации.
+CSS: Стили проекта определены в App.css, а также используются классы Tailwind для кастомизации отдельных элементов.
+## Лицензия
+Проект распространяется под лицензией MIT.
+

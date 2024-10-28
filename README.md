@@ -18,6 +18,7 @@
 git clone https://github.com/Jadoson/react-metaverse.git
 cd react-metaverse
 npm install
+```
 
 Запуск проекта
 Для запуска проекта в режиме разработки используйте команду:

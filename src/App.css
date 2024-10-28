@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  background-color: #171719;
+}
+
+.app-container {
+  position: relative;
+}
+
+.header {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  border-radius: 20px;
+  /z-index: 1;
+  text-align: right;
+  width: calc(100% - 40px);
+}
+
+.background-container {
+  background-image: url('/background.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 700px;
+  padding-top: 90px;
+  padding-left: 5%;
+  padding-right: 10%;
+  color: white;
+  display: flex;
+}
+
+.content-container {
+  margin-top: 500px;
+  z-index: 0;
+}
+.registration-section {
+  flex: 1;
+}
